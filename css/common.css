@@ -1,0 +1,221 @@
+@charset "utf-8";
+
+/* sunny:) */
+html,body {margin: 0; padding: 0;}
+div, span, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, input ,legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, embed, figure, figcaption, footer, header, hgroup, menu, nav, output, ruby, section, summary, time, mark, audio, video {margin: 0;padding: 0;-webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;}
+
+h1,h2,h3,h4,h5,h6 {font-size: inherit; vertical-align:baseline; font-weight: normal;overflow: hidden; text-overflow: ellipsis; white-space: nowrap; color: #000;}
+/* vertical-align:baseline;기준선 꼬리를뺀 위치. baseline이 없으면 margin 끝을 기준선으로 사용함 */
+address,caption,cite,code,dfn,em,th,strong,i {font-style:normal;font-weight:normal;}
+
+ul,ol,dl,dt,dd,li {list-style: none}
+
+a {display: inline-block; text-decoration: none; color: #111; -webkit-tap-highlight-color: rgba(0,0,0,0);outline: 0 none;}
+a::after,a::before {-webkit-tap-highlight-color: rgba(0,0,0,0);} 
+a:link,a:visited,a:active {text-decoration:none;}
+button {border: 0 none; outline: 0 none; cursor: pointer; padding: 0; background: rgba(0,0,0,0); -webkit-box-sizing: border-box; -moz-box-sizing: border-box; -ms-box-sizing: border-box; box-sizing: border-box;-webkit-tap-highlight-color: rgba(0,0,0,0);}
+button::-moz-focus-inner{border:0;padding:0;}
+
+input[type=button],input[type=email],input[type=password],input[type=reset],input[type=search],input[type=submit],input[type=tel],input[type=text],input[type=url],textarea,select{appearance:none; -webkit-appearance:none; -moz-appearance:none; border-radius:0; border:0 none;}
+input:focus,textarea:focus{outline:none;}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {display: none}
+
+img,fieldset,button,table {border: 0 none;}
+
+table {border-collapse:collapse;border-spacing:0;vertical-align:top;}
+legend {font-size: 0; line-height: 0; color: transparent;}
+.skip_nav {position:absolute;top:0;left:0; width:1px;height:1px; font-size:0; line-height:0; overflow:hidden;}
+.skip_nav a,.ir {font-size:0; line-height:0; color: transparent; text-indent: -999px;}
+
+.a11y {position: absolute; left: 0; width: 0; height: 0; clip:rect(1px,1px,1px,1px)}
+.blind {position: absolute; overflow: hidden; clip: rect(0 0 0 0); width: 1px; height: 1px; margin: -1px;}
+
+.sr_only {overflow: hidden; position:absolute; width: 1px; height: 1px; clip: rect(1px,1px,1px,1px);}
+
+/* 웹접근성
+position:absolute 레이아웃에 영향을 끼치지 않도록
+width:1px; height:1px 스크린 리더가 읽을 수 있도록
+clip:rect(1px,1px,1px,1px) 눈에 보이는 부분 제거
+*/
+/* 코드정의서
+.gnb a {font-size:20px; font-family:'notokrR';}
+
+*/
+
+.wrap {overflow: hidden; width: 100%; }
+#header,#container,#footer {position: relative; width: 100%;}
+.cont_inner,.foot_inner {margin:0 auto; width:1000px;}
+
+.header {position: fixed; left: 0; top: 0; z-index: 500; width: 100%; text-align: center; border-bottom: 1px solid #eee; background: #fff;}
+.header .h-inner {margin: 0 auto; width: 80%; height: 90px;}
+.header .h-inner:after {content:'';display: block;clear: both}
+
+.header .side-nav {}
+
+.header .logo {float: left; margin-top: 30px; width: 110px; height: 25px; background: url(https://cwstatic.asiae.co.kr/drinkeat/head_logo.png) no-repeat; background-size: contain;}
+.header .logo a {width: 100%; height: 100%;}
+.header .gnb {display: inline-block;}
+.header .gnb ul {}
+.header .gnb ul li {display: inline-block; margin: 0 10px;}
+.header .gnb ul li a {position: relative; padding: 0 25px; font-size: 20px; line-height: 90px; font-family: 'notokrR'; }
+.header .gnb ul li a:after {content:'';position: absolute; left: 0; bottom: 0; width: 0; height: 2px; background: #111; transition: width .2s ease-in-out;}
+.header .gnb ul li a:hover {font-style: italic;}
+.header .gnb ul li a:hover:after {width: 100%;}
+
+
+.header .btn_search {float: right; margin-top: 20px; position: relative; width: 50px; height: 50px; }
+.header .btn_search span {position: absolute; right: 0; top: 50%; transform: translateY(-50%); display: inline-block; width: 25px; height: 22px; font-size: 0; line-height: 0; background: url(https://cwstatic.asiae.co.kr/drinkeat/m_sch.png) no-repeat; background-size: contain;}
+
+
+
+header .dim {display: none; position: fixed; left: 0; top: 0; z-index: 50; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
+header .sch_box {display: none; position: fixed; left: 0; top: 91px; z-index: 100; padding: 50px 0 95px; width: 100%; background: #fff;}
+
+header .sch_box .sch_form {position: relative; margin: 0 auto 50px; width: 80%;}
+header .sch_box .sch_form:before, header .sch_box .sch_form:after {content:''; display: block; position: absolute; left: 0; bottom: -2px; height: 2px;}
+header .sch_box .sch_form:before {width: 100%; background: #ddd;}
+header .sch_box .sch_form:after {width: 0; background: #595959; transition: all 400ms;}
+header .sch_box .sch_form.active:after {width: 100%;}
+
+header .sch_form .search_field {position: relative; width: 100%; height: 45px; font-size: 18px;}
+header .sch_form .search_field:after {}
+header .sch_form .search_field.active {border-color: #595959;}
+header .sch_form .search_field::placeholder {font-family: 'notokrR'; font-size: 18px; letter-spacing: -0.5px; color: rgba(0,0,0,.5);}
+header .sch_form .search_field:-ms-input-placeholder {}
+header .sch_form .search_field::-ms-input-placeholder {}
+
+header .sch_form [class*="_btn"] {position: absolute; bottom: 0; width: 45px; height: 45px;}
+header .sch_form [class*="_btn"] span {display: inline-block; font-size: 0; vertical-align: middle; color: transparent;}
+header .sch_form .submit_btn {right: 0;}
+header .sch_form .submit_btn span {width: 25px; height: 22px; background: url(https://cwstatic.asiae.co.kr/drinkeat/m_sch.png) no-repeat; background-size: contain;}
+header .sch_form .close_btn {display: none; right: 50px;}
+header .sch_form .close_btn span {width: 18px; height: 18px;  background: url(../img/close_btn.png) no-repeat; background-size: contain;}
+
+header .recmd_tag {margin: 0 auto; width: 77%; text-align: left;}
+header .recmd_tag p {font-family:"Gill Sans","Gill Sans MT",Calibri,sans-serif; color: #595959;}
+header .recmd_tag .tag_list {margin-top: 10px;}
+header .recmd_tag .tag_list li {display: inline-block;}
+header .recmd_tag .tag_list li a {margin-right: 5px; font-family: 'notokrR'; font-size: 15px; }
+header .recmd_tag .tag_list li a:hover {color: #ff695c;}
+
+/* column-list */
+.group_item {display: flex; justify-content:space-between;}
+
+.column_item .list_item {overflow: hidden; width: 320px; margin-bottom: 20px; border: 1px solid rgba(0,0,0,.07);}
+.column_item .list_item:hover {border-color: #555;}
+.column_item .list_item .thumb {overflow: hidden; width: 320px; height: 210px;}
+.column_item .list_item .thumb > img {transition: all .2s;}
+.column_item .list_item:hover .thumb > img {transform: scale(1.1);}
+
+.column_item .list_item .info {position: relative; width: 100%;}
+.column_item .list_item .info .text_box {margin-top: -4px; padding: 20px 0 25px 20px; width: 100%;}
+.column_item .list_item .info .text_box .desc { margin-top: 13px; width: 95%; height: 52px;}
+.column_item .list_item .info .text_box .desc a,.cont-slide .text_box .tit a {display: inline; font-family:'Nanum Myeongjo','Noto Serif KR',serif; font-size:21px; line-height: 26px; letter-spacing:-1px; color:#111; background-position:left; background-size:0 100%; background-image: linear-gradient(#ff695c,#ff695c); background-repeat: no-repeat; transition: all .3s ease-in-out;}
+.column_item .list_item .info:hover .text_box .desc a,.cont-slide .text_box .tit:hover a { background-size: 100% 100%; color: #fff;}
+
+.column_item .list_item .info .btn_share {position: absolute; right: 0; top: 0; width: 45px; height: 45px;}
+.column_item .list_item .info .btn_share .ico {font-size: 0; line-height: 0; display: block; margin-top: 30px; width: 24px; height: 10px; background: url(https://cwstatic.asiae.co.kr/drinkeat/m_moreblack.png) no-repeat; background-size: contain; /*transition: background 200ms;*/ }
+.column_item .list_item .info .btn_share:hover .ico {background: url(../img/hover-ico-popup.png) no-repeat; background-size: contain;}
+/*.column_item .list_item:hover .info .btn_share .ico {-webkit-animation: blink 1.5s ease-in-out infinite alternate;}
+@keyframes blink {
+    0% {opacity: 0;}
+    20% {opacity: 1;}
+    40% {opacity: 0;}
+    60% {opacity: 1;}
+    80% {opacity: 0;}
+    100% {opacity: 1;}
+}*/
+
+/* Footer */
+.footer {padding-bottom: 100px;}
+.footer .notice_area {padding-bottom: 15px; border-bottom: 1px solid #eee;}
+.footer .notice_area:after {content:'';display:block;clear: both;}
+.footer .notice_area .dk_notice {float: left; display: table;}
+.footer .notice_area .dk_sns {float: right;}
+
+.footer .dk_notice .btn_notice {float: left; margin-right: 10px;}
+.footer .dk_notice .btn_notice a {padding: 5px 0; width: 100px; border: 1px solid #ddd; border-radius: 15px; text-align: center; font-size: 15px; letter-spacing: -1px;}
+.footer .dk_notice .info {display: table-cell; vertical-align: middle;}
+.footer .dk_notice .info a {letter-spacing: -1px;}
+.footer .dk_notice .info a:hover {text-decoration: underline;}
+
+.footer .dk_sns li {display: inline-block;}
+.footer .dk_sns li [class*="sns_"] { margin: 0 3px; width: 34px; height: 34px;}
+.footer .dk_sns li .sns_instar {background: url(https://cwstatic.asiae.co.kr/drinkeat/icon_instar01.png) no-repeat; background-size: contain; }
+.footer .dk_sns li .sns_facebk {background: url(https://cwstatic.asiae.co.kr/drinkeat/icon_facebk01.png) no-repeat; background-size: contain;}
+.footer .dk_sns li .sns_blog {margin: 0 10px; background: url(https://cwstatic.asiae.co.kr/drinkeat/blog/blog.png) no-repeat; background-size: contain;}
+.footer .dk_sns li .sns_npost {margin: 0 10px; background: url(https://cwstatic.asiae.co.kr/drinkeat/blog/naver1.png) no-repeat; background-size: contain;}
+
+.footer .dk_sns li .sns_instar:hover {background: url(https://cwstatic.asiae.co.kr/drinkeat/onicon_instar01.png) no-repeat; background-size: contain;}
+.footer .dk_sns li .sns_facebk:hover {background: url(https://cwstatic.asiae.co.kr/drinkeat/onicon_facebk01.png) no-repeat; background-size: contain;}
+.footer .dk_sns li .sns_blog:hover {background: url(https://cwstatic.asiae.co.kr/drinkeat/blog/blog_on.png) no-repeat; background-size: contain;}
+.footer .dk_sns li .sns_npost:hover {background: url(https://cwstatic.asiae.co.kr/drinkeat/blog/naver_on.png) no-repeat; background-size: contain;}
+
+.footer .policy_area {margin-top: 20px;}
+.footer .policy_area:after {content:'';display: block;clear: both}
+.policy_area dl {float: left; }
+.policy_area .family_area {float: right;}
+.policy_area dl dd {display: inline-block; margin-right: 15px;}
+.policy_area dl dd a {font-size: 13px; color: #595959;}
+.policy_area dl dd a.bold {font-weight: bold;}
+.policy_area dl dd a:hover {color: #111;}
+
+.policy_area .family_area {position: relative; margin-right: 20px;}
+.policy_area .family_area .btn-site {padding: 5px 20px; border: 1px solid #ddd; font-size: 13px; font-weight: bold; color: #595959;}
+.policy_area .family_area .site-list {display: none; position: absolute; top: 29px; background-color: #fff;}
+.policy_area .family_area .site-list a {padding-left: 20px; margin-top: -1px; width: 100%; border: 1px solid #ddd; font-size: 13px; line-height: 35px; color: #595959;}
+.policy_area .family_area .site-list.active {display: block;}
+.policy_area .family_area .btn-site:hover, .policy_area .family_area .site-list a:hover {border-color: #ff695c; color: #fff; background-color: #ff695c;}
+
+.footer .corp_area {margin-top: 30px;}
+.footer .corp_area dl {display: inline-block;}
+.footer .corp_area dl dd {}
+.footer .corp_area dl dd span {position: relative; margin-right: 10px; font-size: 13px; line-height: 25px; color: #595959;}
+.footer .corp_area dl dd span:first-child:after {content:''; position: absolute; top: 50%; right: -9px; transform: translateY(-50%); width: 1px; height: 70%; background: #ddd;} 
+.footer .corp_area dl dd .address:after {display: none;}
+.footer .corp_area .warn {margin:20px 0 40px; font-size: 13px; color: #595959;}
+.footer .corp_area .copyright {font-size: 13px; color: #595959;}
+
+/* popup-sns */
+.popup-sns {display: none; position: fixed; left: 0; top: 0; z-index: 550; width: 100%; height: 100%; background: rgba(0,0,0,.5);}
+.popup-sns .layer-sns {position: relative; width: 100%; height: 100%; }
+.popup-sns .layer-sns .sns_box {position: absolute; left: 50%; top: 50%; transform: translate(-50%,-50%); width: 320px; background: #fff;}
+.popup-sns .sns_box p {margin: 15px 0 20px 20px; font-family:'notokrR'; font-size: 17px; letter-spacing: -0.5px;}
+.popup-sns .sns_box .close_popup {position: absolute; right: 0; top: 2px; width: 50px; height: 50px; text-align: center;}
+.popup-sns .sns_box .close_popup span {display: inline-block; width: 13px; height: 13px; text-indent: -999px; font-size: 0; color: transparent; background: url(https://cwstatic.asiae.co.kr/drinkeat/btn_close01.png) no-repeat; background-size: contain;}
+.popup-sns .sns_box .sns_list {padding: 0 20px 30px; text-align: center;}
+.popup-sns .sns_box .sns_list a {margin: 0 3px;}
+.popup-sns .sns_box .sns_list a .icon {display: inline-block;width: 51px; height: 51px; text-indent: -999px; color: transparent; background: url(https://cwstatic.asiae.co.kr/drinkeat/dk_sns.png) no-repeat; background-size: 275px 50px;}
+.popup-sns .sns_box .sns_list a .ico-fb {background-position: 0 0;}
+.popup-sns .sns_box .sns_list a .ico-kko {background-position: -76px 0;}
+.popup-sns .sns_box .sns_list a .ico-twt {background-position: -150px 0;}
+.popup-sns .sns_box .sns_list a .ico-copy {background-position: -224px 0;}
+
+
+.popup-sns .sns_box .sns_list a .ico-text {display: block; margin-top: 3px; font-size: 13px; font-weight: bold; letter-spacing: -1px; color: #595959;}
+.popup-sns .sns_box .sns_list a:hover .ico-text {color: #111;}
+
+
+@media all and (max-width:1040px){
+    .header .h-inner {width: 90%;}
+    .cont_inner, .foot_inner {padding: 0 20px; width: 100%;}
+    
+    .column_item .column_item {}
+    
+    .column_item {width: calc((100% - 3%) / 3);}
+    .column_item .list_item {width: 100%;}
+    .column_item .list_item .thumb {width: 100%; height: 0; padding-bottom: 62%;}
+}
+
+
+
+
+
+
+
+
+
+
